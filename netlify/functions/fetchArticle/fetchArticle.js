@@ -8,15 +8,10 @@ const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 })
 
+
 exports.handler = async function (event, context) {
-  const response = await notion.databases.query({
-      database_id: process.env.NOTION_DB_ID,
-      filter:{
-        property:"Status",
-        select:{
-          equals:"Live"
-        },
-      },
+  const response = await notion.pages.retrieve({
+    page_id: event.queryStringParameters.page_id,
   })
   console.log(response)
   return {
