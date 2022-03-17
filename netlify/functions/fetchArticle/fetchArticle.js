@@ -13,7 +13,6 @@ exports.handler = async function (event, context) {
   const response = await notion.pages.retrieve({
     page_id: event.queryStringParameters.page_id,
   })
-  console.log(response)
   return {
       statusCode: 200,
       body: JSON.stringify({
