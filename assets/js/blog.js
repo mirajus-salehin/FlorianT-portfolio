@@ -1,5 +1,5 @@
 async function fetchDataFromApi() {
-    const response = await fetch("https://floriantanner.netlify.app/api/fetchBlog")
+    const response = await fetch("/blogs/fetchBlog")
         .then(response => response.json())
         .then(data => data.response.results);
 

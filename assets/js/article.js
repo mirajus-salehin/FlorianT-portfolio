@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 async function fetchArticle() {
-    const res = await fetch("https://floriantanner.netlify.app/api/fetchArticle?page_id=" + urlParams.get('page_id'))
+    const res = await fetch("/articles/fetchArticle?page_id=" + urlParams.get('page_id'))
         .then(res => res.json())
         .then(data => data.response);
     var dateString = res.created_time;

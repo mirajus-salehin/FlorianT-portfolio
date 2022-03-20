@@ -2,7 +2,7 @@
     from = "/blogs/*"
     to = "/.netlify/functions/:splat"
     status = 200
-
+[[redirects]]
     from = "/articles/*"
     to = "/.netlify/functions/:splat"
     status = 200
