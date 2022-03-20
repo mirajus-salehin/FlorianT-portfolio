@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>Florian Tanner</title>
+    <title>Contact</title>
     <meta
       property="og:description"
       content="Florian Tanner is a data analysis expert."
@@ -102,69 +102,102 @@
       </div>
     </section>
     <section class="contact-clean" style="background: rgb(255, 255, 255)">
-      <form method="post" style="box-shadow: inset 0px 0px">
+      <form id="form">
         <div class="mb-3">
           <input
-            class="form-control"
             type="text"
-            name="name"
-            placeholder="First Name"
+            name="first_name"
+            id="first_name"
+            placeholder="Enter your frist name"
+            class="form-control"
             required
-            style="font-family: Montserrat, sans-serif"
           />
         </div>
         <div class="mb-3">
           <input
-            class="form-control"
             type="text"
-            name="name"
-            placeholder="Last Name"
+            name="last_name"
+            id="last_name"
+            placeholder="Enter your last name"
+            class="form-control"
             required
-            style="font-family: Montserrat, sans-serif"
           />
         </div>
         <div class="mb-3">
           <input
-            class="form-control"
             type="email"
             name="email"
-            placeholder="Subject"
+            id="email"
+            placeholder="your email address"
+            class="form-control"
             required
-            style="font-family: Montserrat, sans-serif"
           />
         </div>
-        <div class="mb-3">
+        <div>
           <textarea
-            class="form-control"
+            type="text"
             name="message"
-            placeholder="Message"
-            rows="14"
+            id="message"
+            placeholder="What do you want to talk about?"
             required
-            style="font-family: Montserrat, sans-serif"
+            class="form-control"
+            rows="14"
           ></textarea>
         </div>
-        <div class="d-xl-flex justify-content-xl-center mb-3">
-          <button
-            class="btn btn-primary"
-            type="submit"
-            style="
+        <input
+          type="submit"
+          class="btn btn-primary"
+          id="button"
+          value="Send Email"
+          style="
               width: 100%;
               background: #0e153a;
               font-family: Montserrat, sans-serif;
             "
-          >
-            send
-          </button>
-        </div>
+        />
       </form>
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
+
+      <script type="text/javascript">
+        emailjs.init("ty0fYv7ccyL2hLC5q");
+      </script>
     </section>
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const serviceID = "service_o5sgkrp";
+          const templateID = "template_3e9593l";
+
+          emailjs.sendForm(serviceID, templateID, this).then(
+            () => {
+              btn.value = "Send Email";
+              alert("Sent!");
+            },
+            (err) => {
+              btn.value = "Send Email";
+              alert(JSON.stringify(err));
+            }
+          );
+        });
+    </script>
     <!-- Start: Footer Basic -->
     <footer class="footer-basic">
       <!-- Start: Social Icons -->
       <div class="social">
-        <a href="https://github.com/FCTanner"><i class="icon ion-social-github"></i></a
-        ><a href="https://twitter.com/TannerFlorian"><i class="icon ion-social-twitter"></i></a>
-       <a href=" https://www.linkedin.com/in/fctanner/"><i class="icon ion-social-linkedin"></i></a>
+        <a href="https://github.com/FCTanner"
+          ><i class="icon ion-social-github"></i></a
+        ><a href="https://twitter.com/TannerFlorian"
+          ><i class="icon ion-social-twitter"></i
+        ></a>
+        <a href=" https://www.linkedin.com/in/fctanner/"
+          ><i class="icon ion-social-linkedin"></i
+        ></a>
       </div>
       <!-- End: Social Icons -->
     </footer>
