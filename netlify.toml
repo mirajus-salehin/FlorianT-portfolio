@@ -1,4 +1,8 @@
 [[redirects]]
-    from = "/api/*"
+    from = "/blogs/*"
     to = "/.netlify/functions/:splat"
+    status = 200
+
+    from = "/articles/*"
+    to = "/.netlify/functions/":splat"
     status = 200

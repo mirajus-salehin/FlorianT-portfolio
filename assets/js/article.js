@@ -25,7 +25,7 @@ async function fetchArticle() {
               </p>
               <!-- End: Date and Author --><img
                 class="img-fluid"
-                src="/assets/img/Group 11.png"
+                src="${res.properties.Image.files[0].external.url}"
                 style="text-align: center"
               />
             </div>

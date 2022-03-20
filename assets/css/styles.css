@@ -176,6 +176,17 @@ p {
   font-family: Cardo, serif;
 }
 
+.modal_btn{
+  border-color: rgb(31, 188, 215);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 200ms ease-in;
+  font-family: Montserrat, sans-serif;
+}
+
 .navigation-clean {
   background: #fff;
   padding-top: 0.75rem;
